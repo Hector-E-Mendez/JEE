@@ -21,10 +21,7 @@ public class SportTeamsAppListener implements ServletContextListener{
 	private static Logger log = Logger.getLogger(SportTeamsAppListener.class);
 	
 	@Override
-	public void contextDestroyed(ServletContextEvent event) {
-		// TODO Auto-generated method stub
-		
-	}
+	public void contextDestroyed(ServletContextEvent event) {}
 
 	@Override
 	public void contextInitialized(ServletContextEvent event) {

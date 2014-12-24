@@ -8,12 +8,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.xml.bind.annotation.XmlRootElement;
 
-import org.codehaus.jackson.annotate.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @Entity
 @XmlRootElement(name="player")
+@JsonIdentityInfo(generator=ObjectIdGenerators.IntSequenceGenerator.class, property="@id")
 @NamedQuery(name="player.findById", query="from Player where id = :id")
-public class Player {
+public class Player{
 	
 	private Long id;
 	private String name;
@@ -29,7 +31,6 @@ public class Player {
 	
 	@ManyToOne
 	@JoinColumn(name="team_id")
-	@JsonBackReference
 	public Team getTeam() {
 		return team;
 	}
