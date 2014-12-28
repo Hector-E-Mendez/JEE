@@ -44,6 +44,7 @@ public class AdagesApplication extends Application{
 		router.attach("/xml", XmlAllResource.class);
 		router.attach("/json", JsonResource.class);
 		router.attach("/create", CreateResource.class);
+		router.attach("/update", UpdateResource.class);
 		router.attach("/delete/{id}", janitor);
 		return router;
 	}
